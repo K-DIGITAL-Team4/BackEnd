@@ -22,11 +22,7 @@ public class DataController {
 		System.out.println("DataController() 생성자가 호출됨");
 	}
 	
-//	@GetMapping("/data/{car_num}")
-//	public DataVO getSearch(@PathVariable String car_num) {
-//		System.out.println("DataController - getSearch()호출");
-//		return ds.getSearch(car_num);
-//	}	
+
 	//테스트 테이블의 모든 정보 출력
 	@GetMapping("/test")
 	public List<TestVO> testInfo(){
