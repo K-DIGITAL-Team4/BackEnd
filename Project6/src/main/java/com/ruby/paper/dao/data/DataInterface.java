@@ -12,5 +12,4 @@ public interface DataInterface {
 
 	Map<String, Object> getSearch(String car_num);
 
-
 }

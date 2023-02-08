@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ruby.paper.domain.DrivingVO;
@@ -28,6 +29,13 @@ public class DataController {
 		System.out.println("DataController - simulInfo()호출");
 		return ds.simulInfo();
 	}
+	
+	//차량 번호로 정보 조회
+	@GetMapping("/drive/{car_num}")
+	public List<DrivingVO> getSearch(@PathVariable String car_num) {
+		System.out.println("DataController - getSearch()호출");
+		return ds.getSearch(car_num);
+	}	
 	
 	//Driving_Unit_Data 테이블의 모든 정보 출력
 	@GetMapping("/drive")

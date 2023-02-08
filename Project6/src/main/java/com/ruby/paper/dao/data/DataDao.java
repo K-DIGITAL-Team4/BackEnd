@@ -55,17 +55,18 @@ public class DataDao implements DataInterface {
 	@Override
 	public Map<String, Object> getSearch(String car_num) {
 		Map<String, Object> ret = new HashMap<>();
-		String sqlString = String.format("select * from car where car_num=%s", car_num);
+		String sqlString = String.format("select * from Driving_Unit_Data where car_num='%s'", car_num);
 		ret.put("sql", sqlString);
 		try {
-			DrivingVO d = jdbcTemplate.queryForObject(sqlString, new BeanPropertyRowMapper<DrivingVO>(DrivingVO.class));
+			List<DrivingVO> d = jdbcTemplate.query(sqlString, new BeanPropertyRowMapper<DrivingVO>(DrivingVO.class));
 			ret.put("data", d);
 		} catch (Exception e) {
 			ret.put("data", null);
 		}
 		return ret;
 	}
-	
+
+		
 	@Override
 	public Map<String, Object> vehicleInfo() {
 		String sqlString = "select * from Vehicle_Information_Data";

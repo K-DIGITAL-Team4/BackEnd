@@ -28,6 +28,12 @@ public class DataService {
 		return list;
 	}
 	
+	public List<DrivingVO> getSearch(String car_num) {
+		Map<String, Object> map = dao.getSearch(car_num);
+		List<DrivingVO> d = (List<DrivingVO>) map.get("data");
+		return d;
+	}
+	
 	@SuppressWarnings("unchecked")
 	public List<DrivingVO> driveInfo(){
 		Map<String, Object> map = dao.driveInfo();
