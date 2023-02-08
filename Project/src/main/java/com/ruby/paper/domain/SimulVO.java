@@ -2,10 +2,10 @@ package com.ruby.paper.domain;
 
 public class SimulVO {
 
-	private int S_id;
-	private double car_location_GPS_X;
-	private double car_location_GPS_Y;
-	private int SRA;
+	private int S_id;	//PK
+	private double car_location_GPS_X;	//GPS x좌표
+	private double car_location_GPS_Y;	//GPS y좌표
+	private int SRA;	//급격한 RPM 변화 + 급격한 속도 변화
 
 	public SimulVO() {
 		super();
@@ -56,6 +56,6 @@ public class SimulVO {
 	public String toString() {
 		return "SimulVO [S_id=" + S_id + ", car_location_GPS_X=" + car_location_GPS_X + ", car_location_GPS_Y="
 				+ car_location_GPS_Y + ", SRA=" + SRA + "]";
-	}	
-	
+	}
+
 }

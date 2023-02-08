@@ -1,13 +1,13 @@
 package com.ruby.paper.domain;
 
 public class VehicleVO {
-	
-	private String car_num;	//차량번호
-	private int DRS;		//운행점수
-	private int VRS;		//차량점수
-	private int TS;			//종합점수
-	private int Judgment;	//판정
-		
+
+	private String car_num; // 차량번호
+	private int DRS; // 운행점수
+	private int VRS; // 차량점수
+	private int TS; // 종합점수
+	private int Judgment; // 판정
+
 	public VehicleVO() {
 		super();
 	}
