@@ -23,11 +23,20 @@ public class DataController {
 		System.out.println("DataController() 생성자가 호출됨");
 	}
 	
+<<<<<<< HEAD:Project/src/main/java/com/ruby/paper/controller/DataController.java
 	//Simul 테이블의 모든 정보 출력
 	@GetMapping("/simul")
 	public List<SimulVO> simulInfo(){
 		System.out.println("DataController - simulInfo()호출");
 		return ds.simulInfo();
+=======
+
+	//테스트 테이블의 모든 정보 출력
+	@GetMapping("/test")
+	public List<TestVO> testInfo(){
+		System.out.println("DataController - testInfo()호출");
+		return ds.testInfo();
+>>>>>>> fa77e23 (feat: 백엔드 업로드):Project4/src/main/java/com/ruby/paper/controller/DataController.java
 	}
 	
 	//차량 번호로 정보 조회
