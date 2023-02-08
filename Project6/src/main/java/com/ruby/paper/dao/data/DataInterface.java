@@ -10,5 +10,7 @@ public interface DataInterface {
 
 	Map<String, Object> vehicleInfo();
 
+	Map<String, Object> getSearch(String car_num);
+
 
 }
