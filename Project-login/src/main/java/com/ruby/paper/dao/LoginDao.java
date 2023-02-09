@@ -1,4 +1,4 @@
-package com.ruby.paper.dao.data;
+package com.ruby.paper.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -40,7 +40,7 @@ public class LoginDao {
 //		});
 
 		// 짧고 단순한 쿼리문 String.format(문자열 형식 지정) 사용
-		String sql = String.format("insert into Member (id, pw) value ('%s', '%s')", memberVO.getId(), memberVO.getPw());
+		String sql = String.format("insert into Member (id, pw) value ('%s', '%s')", memberVO.getId(), memberVO.getPass());
 		return jdbcTemplate.update(sql);
 	}
 

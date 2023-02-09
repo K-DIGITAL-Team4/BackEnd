@@ -17,22 +17,22 @@ public class LoginController {
 	@Autowired
 	private LoginService loginService;
 
-	@GetMapping("/signin/{id}") // Read , 로그인
+	@GetMapping("/read/{id}") // Read , 로그인
 	public MemberVO getUser(@PathVariable String id) {
 		return loginService.getMember(id);
 	}
 
-	@PostMapping("/signup") // Create , 회원가입
+	@PostMapping("/create") // Create , 회원가입
 	public int addUser(MemberVO userVO) {
 		return loginService.addMember(userVO);
 	}
 
-	@PutMapping("/edit/{id}") // Update , 비밀번호변경
+	@PutMapping("/update/{id}") // Update , 비밀번호변경
 	public int updateUser(@PathVariable String id, String pw) {
 		return loginService.updateMember(id, pw);
 	}
 
-	@DeleteMapping("/remove/{id}") // Delete , 아이디 삭제
+	@DeleteMapping("/delete/{id}") // Delete , 아이디 삭제
 	public int deleteUser(@PathVariable String id) {
 		return loginService.deleteMember(id);
 	}
