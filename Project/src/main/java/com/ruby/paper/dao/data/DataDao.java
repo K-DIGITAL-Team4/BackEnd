@@ -10,6 +10,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.ruby.paper.domain.DrivingVO;
+import com.ruby.paper.domain.OilVO;
 import com.ruby.paper.domain.SimulVO;
 import com.ruby.paper.domain.VehicleVO;
 
@@ -65,8 +66,7 @@ public class DataDao implements DataInterface {
 		}
 		return ret;
 	}
-
-		
+	
 	@Override
 	public Map<String, Object> vehicleInfo() {
 		String sqlString = "select * from Vehicle_Information_Data";
@@ -80,4 +80,18 @@ public class DataDao implements DataInterface {
 		}
 		return ret;
 	}
+		
+	public Map<String, Object> oilInfo() {
+		String sqlString = "select * from oil";
+		Map<String, Object> ret = new HashMap<>();
+		ret.put("sql", sqlString);
+		try {
+			List<OilVO> list = jdbcTemplate.query(sqlString, new BeanPropertyRowMapper<OilVO>(OilVO.class));
+			ret.put("data", list);
+		} catch (Exception e) {
+			ret.put("data", null);
+		}
+		return ret;
+	}
+	
 }

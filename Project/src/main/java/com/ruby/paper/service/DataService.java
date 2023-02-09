@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.ruby.paper.dao.data.DataInterface;
 import com.ruby.paper.domain.DrivingVO;
+import com.ruby.paper.domain.OilVO;
 import com.ruby.paper.domain.SimulVO;
 import com.ruby.paper.domain.VehicleVO;
 
@@ -28,6 +29,7 @@ public class DataService {
 		return list;
 	}
 	
+	@SuppressWarnings("unchecked")
 	public List<DrivingVO> getSearch(String car_num) {
 		Map<String, Object> map = dao.getSearch(car_num);
 		List<DrivingVO> d = (List<DrivingVO>) map.get("data");
@@ -47,4 +49,12 @@ public class DataService {
 		List<VehicleVO> list = (List<VehicleVO>) map.get("data");
 		return list;
 	}
+
+	@SuppressWarnings("unchecked")
+	public List<OilVO> oilInfo() {
+		Map<String, Object> map = dao.oilInfo();
+		List<OilVO> list = (List<OilVO>) map.get("data");
+		return list;
+	}
+
 }
