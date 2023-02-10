@@ -19,7 +19,7 @@ public class DataService {
 	// Interface로 구현된 dao들로 서비스 구현
 	private DataInterface dao;
 
-	// 생성자를 통해서 
+	// 생성자를 통해서 의존성 주입
 	@Autowired
 	public DataService(DataInterface dao) {
 		this.dao = dao;
