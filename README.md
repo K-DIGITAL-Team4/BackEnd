@@ -1,36 +1,25 @@
-# ReadMe: 사업용 차량 안전 위험 분석 웹서비스 프로젝트  
+# 사업용 차량 :truck:  안전 위험 분석 웹서비스 프로젝트 
 
 사업용 차량의 운행기록을 바탕으로 차량 안전 관리정보를 보여주는 웹서비스입니다.
+#### Project execution period : 2023.01.11~02.09
+#### Project Hosting : 호스팅 주소 입력할 것
+------------------
+
+## Description
+차량의 운전자 및 관리자를 위한 정보제공 시스템으로, 차량에 부착된 단말기로 운행정보를 읽어들여 차량 관리 및 안전 등급 등을 분석해서 알려준다.
+
+
+
 
 
 ## Team Members:family:
-- 진주호 https://github.com/juho-jin
-- 김민수 https://github.com/Minsu0207
-- 박경관 https://github.com/kyunggwan
-- 김찬준 https://github.com/ckswns879
++ [진주호](https://github.com/juho-jin)
++ [김민수](https://github.com/Minsu0207)
++ [박경관](https://github.com/kyunggwan)
++ [김찬준](https://github.com/ckswns879)
 
 ## Rerquirements
-## Project2
-- MySQL DB와 스프링부트간의 연결이다.
-- DataController - DataService - DataDao 의 구조로 구성되어 있다.
-- Controller에서는 URL을 통해 React앱에서 온 Http Request를 받는다.
-- Dao객체는 MySQL의 DB와 연동되어 있으며, DB에는 사업용 차량 테이블 정보가 들어있다.
-- 추가적으로 LogDao로 Log를 남기는 기능도 구현했다.
 
-## Project3
-- Project2에서 JDBC Template을 통한 구현으로 바꾸는 중이다.
---- 
-
-MySQL  
-다음과 같이 MySQL 사용자 계정을 설정한 다음  
-더미 데이터(car.csv)를 다운받아 import 해서 데이터를 준비합니다.
-
-사용자 계정 이름 : first  
-비밀번호 : Xptmxm1!  
-모든권한 부여 설정  
-  
-db명 : db1  
-테이블명 : car  
 
 
 동기가 무엇이었나요?
