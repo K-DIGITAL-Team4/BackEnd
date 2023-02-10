@@ -39,7 +39,7 @@ public class DataController {
 	//차량 번호로 정보 조회
 	@GetMapping("/drive/{car_num}")
 	public List<DrivingVO> getSearch(@PathVariable String car_num) {
-		log.info(String.format("DataController - getSearch(%d)가 호출됨", car_num));
+		log.info(String.format("DataController - getSearch(%s)가 호출됨", car_num));
 		return ds.getSearch(car_num);
 	}
 

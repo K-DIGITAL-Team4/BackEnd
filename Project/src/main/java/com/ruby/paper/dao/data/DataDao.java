@@ -14,20 +14,24 @@ import com.ruby.paper.domain.OilVO;
 import com.ruby.paper.domain.SimulVO;
 import com.ruby.paper.domain.VehicleVO;
 
-@Repository
+// DB의 I/O작업 처리
+@Repository("DataDao")
 public class DataDao implements DataInterface {
 
 	private JdbcTemplate jdbcTemplate;
 
+	// 생성자를 통한 의존성 주입
 	@Autowired
 	public DataDao(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate;
 		System.out.println("JDBCTemplate이용");
 	}
 	
+	// 모의주행에 필요한 정보 받음
 	@Override
 	public Map<String, Object> simulInfo() {
-		String sqlString = "select * from Simul";
+		String sqlString = "select S_ID, car_location_GPS_X, car_location_GPS_Y, SRA"
+				+ "from Simul";
 		Map<String, Object> ret = new HashMap<>();
 		ret.put("sql", sqlString);
 		try {
@@ -39,9 +43,11 @@ public class DataDao implements DataInterface {
 		return ret;
 	}
 
+	// 차량의 운행정보를 가져옴
 	@Override
 	public Map<String, Object> driveInfo() {
-		String sqlString = "select * from Driving_Unit_Data";
+		String sqlString = "select car_num, date, dsr, rac, sds, durs"
+				+ "from Driving_Unit_Data";
 		Map<String, Object> ret = new HashMap<>();
 		ret.put("sql", sqlString);
 		try {
@@ -53,10 +59,13 @@ public class DataDao implements DataInterface {
 		return ret;
 	}
 	
+	// 검색된 차량별로 운행정보를 가져옴
 	@Override
 	public Map<String, Object> getSearch(String car_num) {
 		Map<String, Object> ret = new HashMap<>();
-		String sqlString = String.format("select * from Driving_Unit_Data where car_num='%s'", car_num);
+		String sqlString = String.format("select car_num, date, rac, sds, dsr"
+				+ "from Driving_Unit_Data"
+				+ "where car_num='%s'", car_num);
 		ret.put("sql", sqlString);
 		try {
 			List<DrivingVO> d = jdbcTemplate.query(sqlString, new BeanPropertyRowMapper<DrivingVO>(DrivingVO.class));
@@ -67,9 +76,11 @@ public class DataDao implements DataInterface {
 		return ret;
 	}
 	
+	// 안전 운전 등급평가를 위한 정보를 가져옴
 	@Override
 	public Map<String, Object> vehicleInfo() {
-		String sqlString = "select * from Vehicle_Information_Data";
+		String sqlString = String.format("select car_num, judgment"
+				+ "from Vehicle_Information_Data");
 		Map<String, Object> ret = new HashMap<>();
 		ret.put("sql", sqlString);
 		try {
@@ -81,8 +92,10 @@ public class DataDao implements DataInterface {
 		return ret;
 	}
 		
+	// 유류비 분석 정보를 가져옴
 	public Map<String, Object> oilInfo() {
-		String sqlString = "select * from oil";
+		String sqlString = "select O_ID, date, car_num, daily_distance, Oil_Money "
+				+ "from oil";
 		Map<String, Object> ret = new HashMap<>();
 		ret.put("sql", sqlString);
 		try {

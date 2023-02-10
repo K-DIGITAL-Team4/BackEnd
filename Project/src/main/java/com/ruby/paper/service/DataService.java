@@ -12,11 +12,14 @@ import com.ruby.paper.domain.OilVO;
 import com.ruby.paper.domain.SimulVO;
 import com.ruby.paper.domain.VehicleVO;
 
+// 서비스 레이어, 내부 로직을 처리 
 @Service
 public class DataService {
 
+	// Interface로 구현된 dao들로 서비스 구현
 	private DataInterface dao;
 
+	// 생성자를 통해서 
 	@Autowired
 	public DataService(DataInterface dao) {
 		this.dao = dao;
