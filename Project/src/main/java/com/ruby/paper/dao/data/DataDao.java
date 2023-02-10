@@ -31,7 +31,7 @@ public class DataDao implements DataInterface {
 	@Override
 	public Map<String, Object> simulInfo() {
 		String sqlString = "select S_ID, car_location_GPS_X, car_location_GPS_Y, SRA"
-				+ "from Simul";
+				+ " from Simul";
 		Map<String, Object> ret = new HashMap<>();
 		ret.put("sql", sqlString);
 		try {
@@ -47,7 +47,7 @@ public class DataDao implements DataInterface {
 	@Override
 	public Map<String, Object> driveInfo() {
 		String sqlString = "select car_num, date, dsr, rac, sds, durs"
-				+ "from Driving_Unit_Data";
+				+ " from Driving_Unit_Data";
 		Map<String, Object> ret = new HashMap<>();
 		ret.put("sql", sqlString);
 		try {
@@ -64,8 +64,8 @@ public class DataDao implements DataInterface {
 	public Map<String, Object> getSearch(String car_num) {
 		Map<String, Object> ret = new HashMap<>();
 		String sqlString = String.format("select car_num, date, rac, sds, dsr"
-				+ "from Driving_Unit_Data"
-				+ "where car_num='%s'", car_num);
+				+ " from Driving_Unit_Data"
+				+ " where car_num='%s'", car_num);
 		ret.put("sql", sqlString);
 		try {
 			List<DrivingVO> d = jdbcTemplate.query(sqlString, new BeanPropertyRowMapper<DrivingVO>(DrivingVO.class));
@@ -79,8 +79,8 @@ public class DataDao implements DataInterface {
 	// 안전 운전 등급평가를 위한 정보를 가져옴
 	@Override
 	public Map<String, Object> vehicleInfo() {
-		String sqlString = String.format("select car_num, judgment"
-				+ "from Vehicle_Information_Data");
+		String sqlString = String.format("select car_num, judgment "
+				+ " from Vehicle_Information_Data");
 		Map<String, Object> ret = new HashMap<>();
 		ret.put("sql", sqlString);
 		try {
