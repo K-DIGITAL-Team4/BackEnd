@@ -3,7 +3,7 @@ package com.ruby.paper.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ruby.paper.dao.data.LoginDao;
+import com.ruby.paper.dao.LoginDao;
 import com.ruby.paper.domain.MemberVO;
 
 @Service
