@@ -31,7 +31,7 @@ public class DataDao implements DataInterface {
 	@Override
 	public Map<String, Object> simulInfo() {
 		String sqlString = "select S_ID, car_location_GPS_X, car_location_GPS_Y, SRA"
-				+ " from Simul";
+				+ " from simul";
 		Map<String, Object> ret = new HashMap<>();
 		ret.put("sql", sqlString);
 		try {
@@ -46,8 +46,8 @@ public class DataDao implements DataInterface {
 	// 차량의 운행정보를 가져옴
 	@Override
 	public Map<String, Object> driveInfo() {
-		String sqlString = "select car_num, date, dsr, rac, sds, durs"
-				+ " from Driving_Unit_Data";
+		String sqlString = "select car_num, date, dsr, rac, sds, durs "
+				+ " from driving_unit_data";
 		Map<String, Object> ret = new HashMap<>();
 		ret.put("sql", sqlString);
 		try {
@@ -63,8 +63,8 @@ public class DataDao implements DataInterface {
 	@Override
 	public Map<String, Object> getSearch(String car_num) {
 		Map<String, Object> ret = new HashMap<>();
-		String sqlString = String.format("select car_num, date, rac, sds, dsr"
-				+ " from Driving_Unit_Data"
+		String sqlString = String.format("select car_num, date, rac, sds, dsr "
+				+ " from driving_unit_data"
 				+ " where car_num='%s'", car_num);
 		ret.put("sql", sqlString);
 		try {
@@ -79,8 +79,8 @@ public class DataDao implements DataInterface {
 	// 안전 운전 등급평가를 위한 정보를 가져옴
 	@Override
 	public Map<String, Object> vehicleInfo() {
-		String sqlString = String.format("select car_num, judgment "
-				+ " from Vehicle_Information_Data");
+		String sqlString = String.format("select car_num, drs, vrs, ts, judgment "
+				+ " from vehicle_information_data");
 		Map<String, Object> ret = new HashMap<>();
 		ret.put("sql", sqlString);
 		try {
@@ -94,8 +94,8 @@ public class DataDao implements DataInterface {
 		
 	// 유류비 분석 정보를 가져옴
 	public Map<String, Object> oilInfo() {
-		String sqlString = "select O_ID, date, car_num, daily_distance, Oil_Money "
-				+ "from oil";
+		String sqlString = "select O_ID, date, car_num, daily_distance, oil_money "
+				+ " from oil";
 		Map<String, Object> ret = new HashMap<>();
 		ret.put("sql", sqlString);
 		try {
