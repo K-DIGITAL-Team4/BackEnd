@@ -30,11 +30,13 @@
 ## :fire:Final Version
 ![Final](https://user-images.githubusercontent.com/113881846/218413465-dc4bcdef-280d-4ad8-8837-91783dee9694.png)
 
-## :bookmark: Explanation
-- DB는 AWS의 RDS 인스턴스를 설정해서 구성했다.
-- Springboot는 위의 코드로 AWS의 EC2 서버에서 배포했다.
+## :bookmark: Learned
+- EC2-Docker, Docker-compose를 활용하여 서버에서 빌드하는 방법을 알 수 있었음
+- React와 Spring 프로젝트를 연동하면서 발생한 CORS 에러를 Proxy 설정을 통해 해결할 수 있었음
+- Git convention, Code convention 등 협업에 필요한 툴 사용 및 소통방법을 익힐 수 있었음
 
 ## :white_check_mark:What's missing
-- JPA로 구현하려 했으나 기능이 너무 적어 비효율적이라고 생각했다. 다른 프로젝트에서는 JPA로 해볼 예정이다.
-- 회원가입, 로그인 기능을 최종결과물에서 구현하지 못했다.
-- EC2에 배포하긴 했지만 Docker에 대한 이해가 부족하다.
+- JPA 활용, 로그인 기능 구현 등을 하고 싶었으나 팀원 보조로 백엔드적으로 손을 많이 못써서 아쉬움
+- AWS - RDS, EC2-Docker, Docker-compose 등을 활용했으나 깊게 이해하고 쓰지는 못함. MSA(MicroService Architecture)를 공부하고, 적용해볼 필요가 있음
+- 협업 시에 Pull Request, Merge, Issue로 tracking하는 등 git 툴 사용을 더 원할히 할 필요가 있음
+- 백엔드에서 단순 테이블 입출력만 했는데, 테이블 join, 디테일한 쿼리 구현, 비지니스 로직이 없어 아쉬움
