@@ -2,7 +2,7 @@
 
 사업용 차량의 운행기록을 바탕으로 차량 안전 관리정보를 보여주는 웹서비스입니다.
 #### Project execution period : 2023.01.11~02.09
-#### Project Hosting : 호스팅 주소 입력할 것
+#### Project Hosting :https://teampj01-69cc7.web.app/
 ------------------
 
 ## Description
